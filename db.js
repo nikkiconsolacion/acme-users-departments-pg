@@ -15,6 +15,8 @@ const noDeptId = uuid.v4();
 const moeId = uuid.v4();
 const larryId = uuid.v4();
 const curlyId = uuid.v4();
+const archerId = uuid.v4();
+const nikkiId = uuid.v4();
 
 
 const SQL = `
@@ -35,10 +37,11 @@ const SQL = `
   INSERT INTO departments(id, name) VALUES('${marketingId}', 'marketing');
   INSERT INTO departments(id, name) VALUES('${itId}', 'it');
   INSERT INTO departments(id, name) VALUES('${noDeptId}', 'users with no department');
-  INSERT INTO users(id, name, department_id, bio) VALUES('${moeId}', 'moe', '${hrId}', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nemo velit necessitatibus sint. Ratione corrupti dolorum unde obcaecati? Molestiae, ullam.');
-  INSERT INTO users(id, name, department_id, bio) VALUES('${larryId}', 'larry', '${noDeptId}', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias deleniti, eligendi dicta illo placeat cupiditate.');
-  INSERT INTO users(id, name, department_id, bio) VALUES('${curlyId}', 'curly', '${marketingId}', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia incidunt aliquid suscipit animi rerum, sed adipisci sint minus eligendi, iste praesentium, ipsa porro eaque atque.');
-
+  INSERT INTO users(id, name, department_id, bio) VALUES('${moeId}', 'Moe', '${hrId}', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nemo velit necessitatibus sint. Ratione corrupti dolorum unde obcaecati? Molestiae, ullam.');
+  INSERT INTO users(id, name, department_id, bio) VALUES('${larryId}', 'Larry', '${noDeptId}', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias deleniti, eligendi dicta illo placeat cupiditate.');
+  INSERT INTO users(id, name, department_id, bio) VALUES('${curlyId}', 'Curly', '${marketingId}', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia incidunt aliquid suscipit animi rerum, sed adipisci sint minus eligendi, iste praesentium, ipsa porro eaque atque.');
+  INSERT INTO users(id, name, department_id, bio) VALUES('${archerId}', 'Archer', '${salesId}', 'The Archer of Darkness joined CODETEC in 2019, he is our noobiest developer.');
+  INSERT INTO users(id, name, department_id, bio) VALUES('${nikkiId}', 'Nikki', '${itId}', 'Nikki Consolacion is an up and coming Dev who will code the world.');
 `;
 
 const syncAndSeed = async()=> {
