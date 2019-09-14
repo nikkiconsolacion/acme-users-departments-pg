@@ -10,7 +10,6 @@ const hrId = uuid.v4();
 const salesId = uuid.v4();
 const marketingId = uuid.v4();
 const itId = uuid.v4();
-const noDeptId = uuid.v4();
 
 const moeId = uuid.v4();
 const larryId = uuid.v4();
