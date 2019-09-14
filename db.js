@@ -6,27 +6,37 @@ const client = new Client('postgres://localhost/the_people');
 
 client.connect();
 
+const hrId = uuid.v4();
+const salesId = uuid.v4();
+const marketingId = uuid.v4();
+const itId = uuid.v4();
+const noDeptId = uuid.v4();
+
+const moeId = uuid.v4();
+const larryId = uuid.v4();
+const curlyId = uuid.v4();
 
 
 const SQL = `
   DROP TABLE IF EXISTS users;
   DROP TABLE IF EXISTS departments;
   CREATE TABLE departments(
-    id SERIAL PRIMARY KEY,
+    id UUID PRIMARY KEY,
     name VARCHAR(255) UNIQUE NOT NULL
   );
   CREATE TABLE users(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255) UNIQUE NOT NULL
+    id UUID PRIMARY KEY,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    department_id UUID REFERENCES departments(id)
   );
-  INSERT INTO departments(name) VALUES('hr');
-  INSERT INTO departments(name) VALUES('sales');
-  INSERT INTO departments(name) VALUES('marketing');
-  INSERT INTO departments(name) VALUES('it');
-  INSERT INTO departments(name) VALUES('users with no department');
-  INSERT INTO users(name) VALUES('moe');
-  INSERT INTO users(name) VALUES('larry');
-  INSERT INTO users(name) VALUES('curly');
+  INSERT INTO departments(id, name) VALUES('${hrId}','hr');
+  INSERT INTO departments(id, name) VALUES('${salesId}', 'sales');
+  INSERT INTO departments(id, name) VALUES('${marketingId}', 'marketing');
+  INSERT INTO departments(id, name) VALUES('${itId}', 'it');
+  INSERT INTO departments(id, name) VALUES('${noDeptId}', 'users with no department');
+  INSERT INTO users(id, name, department_id) VALUES('${moeId}', 'moe', '${hrId}');
+  INSERT INTO users(id, name, department_id) VALUES('${larryId}', 'larry', '${noDeptId}');
+  INSERT INTO users(id, name, department_id) VALUES('${curlyId}', 'curly', '${marketingId}');
 
 `;
 

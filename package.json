@@ -1,10 +1,10 @@
 {
   "name": "acme_users_departments_pg",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +13,14 @@
     "express": "^4.17.1",
     "pg": "^7.12.1",
     "uuid": "^3.3.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikkiconsolacion/acme-users-departments-pg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nikkiconsolacion/acme-users-departments-pg/issues"
+  },
+  "homepage": "https://github.com/nikkiconsolacion/acme-users-departments-pg#readme",
+  "description": ""
 }
