@@ -27,16 +27,17 @@ const SQL = `
   CREATE TABLE users(
     id UUID PRIMARY KEY,
     name VARCHAR(255) UNIQUE NOT NULL,
-    department_id UUID REFERENCES departments(id)
+    department_id UUID REFERENCES departments(id),
+    bio VARCHAR(255)
   );
   INSERT INTO departments(id, name) VALUES('${hrId}','hr');
   INSERT INTO departments(id, name) VALUES('${salesId}', 'sales');
   INSERT INTO departments(id, name) VALUES('${marketingId}', 'marketing');
   INSERT INTO departments(id, name) VALUES('${itId}', 'it');
   INSERT INTO departments(id, name) VALUES('${noDeptId}', 'users with no department');
-  INSERT INTO users(id, name, department_id) VALUES('${moeId}', 'moe', '${hrId}');
-  INSERT INTO users(id, name, department_id) VALUES('${larryId}', 'larry', '${noDeptId}');
-  INSERT INTO users(id, name, department_id) VALUES('${curlyId}', 'curly', '${marketingId}');
+  INSERT INTO users(id, name, department_id, bio) VALUES('${moeId}', 'moe', '${hrId}', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nemo velit necessitatibus sint. Ratione corrupti dolorum unde obcaecati? Molestiae, ullam.');
+  INSERT INTO users(id, name, department_id, bio) VALUES('${larryId}', 'larry', '${noDeptId}', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias deleniti, eligendi dicta illo placeat cupiditate.');
+  INSERT INTO users(id, name, department_id, bio) VALUES('${curlyId}', 'curly', '${marketingId}', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia incidunt aliquid suscipit animi rerum, sed adipisci sint minus eligendi, iste praesentium, ipsa porro eaque atque.');
 
 `;
 
